@@ -31,4 +31,15 @@ public class Position {
 	public String toString() {
 		return "(" + x + "," + y + ")";
 	}
+	
+	//Métodos
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Position))
+			return false;
+
+		Position objCompare = (Position)obj;
+
+		return objCompare.x == this.x && objCompare.y == this.y;
+	}
 }

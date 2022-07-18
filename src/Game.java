@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Game {
 	//Atributos
 	Ash ash;
-	ArrayList<Position> PositionsLog = new ArrayList<>();
+	Set<Position> positionsLog = new HashSet<>();
 	
 	//Construtor
 	public Game(Ash ash) {
@@ -16,20 +18,24 @@ public class Game {
 		return ash;
 	}
 
-	public ArrayList<Position> getPositionsLog() {
-		return PositionsLog;
+	public Set<Position> getPositionsLog() {
+		return positionsLog;
 	}
 	
 	//Métodos
 	public void processInput(String input) {	
-		PositionsLog.add(ash.getPosition());
 
+		positionsLog.add(ash.getPosition());
+		
 		String[] multipleDirections = input.split("");
-		for (String singleDirection : multipleDirections) {
-			PositionsLog.add(ash.Move(singleDirection));
-		}		
-		System.out.println(PositionsLog);
-		System.out.println(PositionsLog.size());
+		
+		for (String singleDirection: multipleDirections) {
+			positionsLog.add(ash.Move(singleDirection));
+			ash.newPosition();
+		}
+
+		System.out.println(positionsLog.size());
+		System.out.println(positionsLog);
 	}
 	
 	

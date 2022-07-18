@@ -1,3 +1,4 @@
+
 public class Ash {
 	//Atributos
 	Position p;
@@ -30,17 +31,14 @@ public class Ash {
 		Direction d = Direction.directionFor(direction);
 		
 		if (d == Direction.N) {
-			System.out.println(p);
 			p.setY(p.y++);
-			System.out.println(p);
 		} else if (d == Direction.S) {
-			p.setY(p.y--);
+			p.y--;
 		} else if (d == Direction.E) {
-			p.setX(p.x++);
+			p.x++;
 		} else if (d == Direction.O) {
-			p.setX(p.x--);
+			p.x--;
 		}
-			
 		return getPosition();
 	}
 	
