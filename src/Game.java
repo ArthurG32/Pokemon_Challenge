@@ -10,7 +10,7 @@ public class Game {
 	//Construtor
 	public Game(Ash ash) {
 		this.ash = ash;
-		PositionsLog.add(ash.getPosition());
+		newPosition = ash.getPosition();
 	}
 
 	//Getters
@@ -25,14 +25,16 @@ public class Game {
 	//Métodos
 	public void processInput(String input) {	
 		
+		PositionsLog.add(newPosition);
+		
 		if (input.length() == 1) {
 			System.out.println(PositionsLog);
 			newPosition = ash.Move(input);
-			System.out.println(newPosition);
-
+			System.out.println(PositionsLog);
+			
 			if (PositionsLog.contains(newPosition)) {
-				System.out.println("entra aqui");
-				ash.newPokemon();
+				ash.newPosition();
+				getPositionsLog().add(newPosition);
 			}
 				
 		} else if (input.length() > 1) {

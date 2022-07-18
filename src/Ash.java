@@ -1,11 +1,7 @@
-
 public class Ash {
 	//Atributos
 	Position p;
 	int pokedex = 1;
-	
-	Game game = new Game(this);
-
 	
 	//Construtor
 	public Ash(Position p) {
@@ -16,14 +12,17 @@ public class Ash {
 	public Position getPosition() {
 		return p;
 	}
+	
+	public void setPosition(Position p) {
+		this.p = p;
+	}
 
 	public int getPokedex() {
 		return pokedex;
 	}
 
 	//Metodos
-	public void newPokemon() {		
-		game.getPositionsLog().add(getPosition());
+	public void newPosition() {		
 		pokedex++;
 	}
 	
@@ -31,17 +30,16 @@ public class Ash {
 		Direction d = Direction.directionFor(direction);
 		
 		if (d == Direction.N) {
-			p.y++;
+			setPosition(new Position(p.x, p.y++));
 		} else if (d == Direction.S) {
-			p.y--;
+			p.setY(p.y--);
 		} else if (d == Direction.E) {
-			p.x++;
+			p.setX(p.x++);
 		} else if (d == Direction.O) {
-			p.x--;
+			p.setX(p.x--);
 		}
 			
 		return getPosition();
 	}
-	
 	
 }
