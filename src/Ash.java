@@ -1,8 +1,6 @@
-
 public class Ash {
 	//Atributos
-	Position p;
-	int pokedex = 1;
+	private Position p;
 	
 	//Construtor
 	public Ash(Position p) {
@@ -18,28 +16,20 @@ public class Ash {
 		this.p = p;
 	}
 
-	public int getPokedex() {
-		return pokedex;
-	}
-
 	//Metodos
-	public void newPosition() {		
-		pokedex++;
-	}
-	
-	public Position Move(String direction) {
+	public Position move(String direction) {
 		Direction d = Direction.directionFor(direction);
 		
 		if (d == Direction.N) {
-			p.setY(p.y++);
+			p = new Position(p.getX(), p.getY()+1);
 		} else if (d == Direction.S) {
-			p.y--;
+			p = new Position(p.getX(), p.getY()-1);
 		} else if (d == Direction.E) {
-			p.x++;
+			p = new Position(p.getX()+1, p.getY());
 		} else if (d == Direction.O) {
-			p.x--;
+			p = new Position(p.getX()-1, p.getY());
 		}
-		return getPosition();
+		return p ;
 	}
 	
 }

@@ -16,9 +16,9 @@ public class Test {
 		System.out.print("O Ash está na posição " + ash.getPosition() + "\nMove o Ash para uma nova posição: ");
 		String direction = scanner.next().toLowerCase();
 	
-		game.processInput(direction);
+		int pokedex = game.processInput(direction);
 		
-		System.out.println("O Ash está agora na posição " + ash.getPosition() + " e apanhou " + ash.getPokedex() + " pokemons.");
+		System.out.println("O Ash está agora na posição " + ash.getPosition() + " e apanhou " + pokedex + " pokemons.");
 		
 		scanner.close();
 	}

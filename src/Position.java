@@ -1,8 +1,8 @@
 
 public class Position {
 	//Atributos
-	int x;
-	int y;
+	private int x;
+	private int y;
 	
 	//Construtor
 	public Position(int x, int y) {
