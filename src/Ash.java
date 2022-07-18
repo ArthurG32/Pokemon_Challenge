@@ -30,7 +30,9 @@ public class Ash {
 		Direction d = Direction.directionFor(direction);
 		
 		if (d == Direction.N) {
-			setPosition(new Position(p.x, p.y++));
+			System.out.println(p);
+			p.setY(p.y++);
+			System.out.println(p);
 		} else if (d == Direction.S) {
 			p.setY(p.y--);
 		} else if (d == Direction.E) {
