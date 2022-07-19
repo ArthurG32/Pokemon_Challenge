@@ -27,12 +27,13 @@ public class Position {
 		this.y = y;
 	}
 	
+	//Métodos
+
 	@Override
 	public String toString() {
 		return "(" + x + "," + y + ")";
 	}
 	
-	//Métodos
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Position))
@@ -42,4 +43,13 @@ public class Position {
 
 		return objCompare.x == this.x && objCompare.y == this.y;
 	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+	
+	
+	
+	
 }

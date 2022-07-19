@@ -26,9 +26,10 @@ public class Game {
 		String[] multipleDirections = input.split("");
 		
 		for (String singleDirection: multipleDirections) {
-			positionsLog.add(ash.move(singleDirection));
+			ash.move(singleDirection);
+			positionsLog.add(ash.getPosition());
 		}
-		//System.out.println(positionsLog);
+		System.out.println(positionsLog);
 		return positionsLog.size();
 	}
 	
