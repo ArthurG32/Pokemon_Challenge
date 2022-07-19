@@ -46,7 +46,7 @@ public class Position {
 	
 	@Override
 	public int hashCode() {
-		return super.hashCode();
+		return x + y; // para garantir que x,y e y,x são diferentes
 	}
 	
 	
